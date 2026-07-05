@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: braille-vision
+    runtime: python
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: gunicorn app:app -c gunicorn.conf.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: GROQ_API_KEY
+        sync: false
+      - key: DISABLE_SERVER_TTS
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"

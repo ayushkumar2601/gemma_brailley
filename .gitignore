@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets — NEVER commit
+.env
+!.env.example
+
+# Model weights are committed via LFS or releases
+# (kept in repo for reproducibility — small model ~2MB)
+
+# Runtime temp files
+braille_ai/cells/
+braille_ai/temp/
+/tmp/
+
+# Logs
+*.log
+logs/
+
+# Test artifacts
+.pytest_cache/
+htmlcov/
+.coverage
+
+# OCR working folders
+"OCR Raw Data"/
+"OCR Predictions"/
+"Page image files with rectangles"/

@@ -1,0 +1,24 @@
+# Web framework
+flask==2.3.3
+flask-cors==4.0.0
+gunicorn==21.2.0
+
+# Image processing (headless — no GUI libs; better on Render/Linux)
+pillow==10.1.0
+numpy==1.24.4
+opencv-python-headless==4.8.1.78
+
+# Deep learning — CPU wheels only (avoids huge NVIDIA CUDA packages on Render)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0
+torchvision==0.16.0
+
+# AI correction (0.4.x breaks on httpx 0.28+ — "proxies" TypeError on Render)
+groq>=0.13.0,<1.0
+python-dotenv==1.0.0
+
+# Text-to-speech (optional locally; set DISABLE_SERVER_TTS=1 on Render)
+pyttsx3==2.90
+
+# Utilities
+requests==2.31.0
