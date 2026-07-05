@@ -1,7 +1,7 @@
 # 👁️ Braille Vision — AI Accessibility Scanner
 
-> **Real-time Braille OCR with CNN recognition, live camera scanning, and Text-to-Speech.**  
-> Built for accessibility. Powered by a **custom synthetic dataset**, PyTorch, and Groq LLaMA AI correction.
+> **Real-time Braille OCR with CNN recognition, multilingual accessibility workflows, and future Gemma 4 language intelligence.**  
+> Built for accessibility. Powered by a **custom synthetic dataset**, PyTorch, and planned Gemma language intelligence.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -10,6 +10,24 @@
   <img src="https://img.shields.io/badge/OpenCV-4.8-red?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />
   <img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" alt="License" />
 </p>
+
+---
+
+# Gemma 4 Integration Roadmap
+
+Braille Vision is actively evolving toward integrating **Gemma 4** as its core language intelligence layer. While our current release successfully delivers real-time computer vision dot detection, PyTorch CNN character recognition, and Text-to-Speech synthesis, Gemma 4 is planned to power advanced natural language understanding, multilingual translation, and error correction for visually impaired users.
+
+| Capability | Status |
+| :--- | :--- |
+| Braille Detection | Implemented |
+| CNN Character Recognition | Implemented |
+| Text-to-Speech | Implemented |
+| Gemma OCR Error Correction | Planned |
+| Gemma Translation (English ↔ Bengali/Hindi) | Planned |
+| Gemma Content Simplification | Planned |
+| Gemma Accessibility Assistant | Planned |
+
+> **Note:** Gemma 4 integration described in this document represents the planned roadmap of the project. Current releases focus on Braille detection, OCR, and accessibility features. Gemma-powered capabilities are under active development.
 
 ---
 
@@ -24,13 +42,35 @@ This visual pipeline demonstrates **Braille Vision** detecting, transcribing, an
 
 ---
 
-## ⚡ Key Features
+## Current Features
 
 * **Adaptive Dot Detection:** Handles shadows, perspective shifts, and slight camera rotations.
 * **Custom CNN Classifier:** Low-latency PyTorch model running locally on the server.
-* **Groq LLaMA Correction:** Optional cloud-based correction of spelling and grammatical glitches.
 * **Instant Text-to-Speech:** Integrated TTS reads out recognized text using macOS or web fallbacks.
 * **Keyboard-First Interface:** Responsive design with extensive shortcuts for keyboard and screen reader accessibility.
+
+---
+
+## Planned Gemma Features
+
+* OCR error correction using Gemma 4
+* Translation into Bengali, Hindi, and other regional languages
+* Accessibility-focused content simplification
+* Context-aware sentence reconstruction
+* Conversational accessibility assistant
+
+---
+
+## Build with Gemma Vision
+
+Braille Vision aims to use Gemma 4 as an accessibility intelligence layer that transforms raw Braille recognition into understandable, translatable, and voice-enabled content for visually impaired users.
+
+This planned integration aligns directly with key hackathon themes and tracks:
+
+* **Local Language & Inclusion Track:** Breaking down language barriers by bridging English Braille transcription with regional spoken and written languages.
+* **Accessibility:** Empowering visually impaired individuals by converting static, tactile Braille into dynamic, spoken, and interactive digital text.
+* **Multilingual support:** Planned translation pipelines for Bengali, Hindi, and other regional languages to ensure broad inclusivity.
+* **Education and information access:** Facilitating easier learning and document comprehension through context-aware sentence reconstruction and content simplification.
 
 ---
 
@@ -44,7 +84,7 @@ graph TD
     D --> E[Cell Segmentation & Spacing Estimation]
     E --> F[PyTorch CNN Model]
     F --> G[Character Translation A-Z]
-    G --> H[Groq LLaMA 3.1 Correction]
+    G --> H["Gemma 4 Language Layer (Planned)"]
     H --> I[Speak via Text-to-Speech]
     H --> J[Display on Web UI Dashboard]
     style A fill:#4F46E5,stroke:#312E81,stroke-width:2px,color:#fff
@@ -52,6 +92,18 @@ graph TD
     style H fill:#10B981,stroke:#064E3B,stroke-width:2px,color:#fff
     style J fill:#3B82F6,stroke:#1E3A8A,stroke-width:2px,color:#fff
 ```
+
+### Gemma 4 Language Layer (Planned)
+
+The language processing pipeline is designed to transition from basic transcription to an intelligent, context-aware accessibility layer powered by Gemma 4. This upcoming stage will handle:
+
+* **OCR error correction:** Contextually correcting misclassified Braille characters from noisy image scans.
+* **Sentence reconstruction:** Restoring natural grammatical flow and coherence to transcribed cells.
+* **Multilingual translation:** Translating English text into regional languages such as Bengali, Hindi, and more.
+* **Accessibility-focused summarization:** Condensing long or complex Braille documents into easy-to-understand summaries.
+* **Natural language interaction:** Enabling conversational follow-up questions and voice-guided assistance.
+
+Gemma integration is currently under development and is part of the project's future roadmap.
 
 ---
 
@@ -187,7 +239,7 @@ Deploy the Flask application server, computer vision pipelines, and PyTorch mode
 | Timestamp | Screen Interaction | Narrative Script / Speech |
 | :--- | :--- | :--- |
 | **0:00 - 0:15** | App home page, dashboard header | *"This is Braille Vision — an AI accessibility scanner that reads Braille from images and camera."* |
-| **0:15 - 0:25** | Point to Groq & CNN status indicators | *"It utilizes a CNN trained on a custom synthetic dataset combined with optional Groq LLaMA AI correction."* |
+| **0:15 - 0:25** | Point to model status indicators | *"It utilizes a CNN trained on a custom synthetic dataset, with planned Gemma 4 integration for language intelligence."* |
 | **0:25 - 0:55** | Upload [public/test_jaihind.jpg](file:///Users/ayush/Braiile-Vision/public/test_jaihind.jpg) | *"I upload a Braille sample page; the system instantly locates dots, structures them, and runs cell classification."* |
 | **0:55 - 1:10** | Show history log / click TTS button | *"We get live output, visual outlines, confidence statistics, history tracking, and Text-to-Speech feedback."* |
 | **1:10 - 1:25** | Toggle theme switcher | *"The interface supports high-contrast dark and light modes optimized for various accessibility needs."* |
@@ -240,6 +292,17 @@ Deploy the Flask application server, computer vision pipelines, and PyTorch mode
 | <kbd>C</kbd> | Copy recognized text to system clipboard |
 | <kbd>U</kbd> | Direct trigger for manual file upload dialog |
 | <kbd>D</kbd> | Auto-run pipeline using demo assets |
+
+---
+
+### Future Work
+
+* Gemma-powered translation
+* Gemma-powered educational explanations
+* Offline Gemma inference
+* Regional language accessibility
+* Document understanding
+* Voice-based accessibility assistant
 
 ---
 
